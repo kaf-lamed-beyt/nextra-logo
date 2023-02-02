@@ -25,6 +25,8 @@ const Logo: React.FC<Props> = ({ light, dark }) => {
       // clean up
       return () => mediaQuery.removeListener(handleThemeChange);
     }
+
+    return () => {};
   }, []);
 
   return (

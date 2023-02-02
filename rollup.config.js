@@ -26,7 +26,6 @@ export default [
     ],
     plugins: [
       json(),
-      styles(),
       terser(),
       commonjs(),
       peerDepsExternal(),
