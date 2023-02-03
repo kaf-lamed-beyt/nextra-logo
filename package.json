@@ -34,7 +34,6 @@
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
-    "parcel": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^3.12.1",
@@ -52,5 +51,8 @@
     "dist",
     "LICENSE",
     "README.md"
-  ]
+  ],
+  "dependencies": {
+    "next-themes": "^0.2.1"
+  }
 }

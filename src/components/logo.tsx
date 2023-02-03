@@ -1,37 +1,21 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
-interface Props {
-  light: string;
+interface logoProps {
   dark: string;
+  light: string;
 }
 
-const Logo: React.FC<Props> = ({ light, dark }) => {
-  let isThemeDark = false;
-  if (typeof window !== "undefined") {
-    isThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const Logo: React.FC<logoProps> = ({ dark, light }) => {
+  const { theme, systemTheme } = useTheme();
+
+  console.log("current theme", theme, systemTheme);
+
+  if (theme === "dark") {
+    return <img src={light} width="120" height="120" alt="dark theme logo" />;
   }
 
-  const [darkMode, setDarkMode] = useState(isThemeDark);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
-      const handleThemeChange = (e: MediaQueryListEvent) =>
-        setDarkMode(e.matches);
-
-      mediaQuery.addListener(handleThemeChange);
-
-      // clean up
-      return () => mediaQuery.removeListener(handleThemeChange);
-    }
-
-    return () => {};
-  }, []);
-
-  return (
-    <img src={darkMode ? light : dark} alt="Logo" width="120" height="120" />
-  );
+  return <img src={dark} width="120" height="120" alt="light logo" />;
 };
 
 export default Logo;

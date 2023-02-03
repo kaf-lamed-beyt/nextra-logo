@@ -4,7 +4,7 @@ Render variations of your logos in dark and light mode for the [Nextra](https://
 
 ## Usage
 
-I'm not sure if this package works in conventional React applications, as it was built with the Nextra framework in focus, alone. Since the component uses the [`matchMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) Web API by default, It should work for other use cases.
+I'm not sure if this package works in conventional React applications, as it was built with the Nextra framework in focus, alone. Since the component uses some properties of [`matchMedia()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) Web API extended from the `next-themes` package by default.
 
 But, please feel free to use it and give your [feedback](https://github.com/kaf-lamed-beyt/nextra-logo/issues). I'd be so delighted to learn about what needs to be improved as the package grows
 
