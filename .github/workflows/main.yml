@@ -24,7 +24,7 @@ jobs:
         run: yarn build
 
       - name: Login to npm
-        run: npm login --registry=https://registry.npmjs.org/
+        run: npm login
         env:
           NPM_USERNAME: ${{ secrets.USERNAME }}
           NPM_PASSWORD: ${{ secrets.PASSWORD }}
