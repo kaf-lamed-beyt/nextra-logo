@@ -1,0 +1,36 @@
+name: build
+
+on:
+  release:
+    types: ["published"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.0
+
+      - name: Install package dependecies
+        run: yarn && yarn install
+
+      - name: Build
+        run: yarn build
+
+      - name: Login to npm
+        run: npm login --registry=https://registry.npmjs.org/
+        env:
+          NPM_USERNAME: ${{ secrets.USERNAME }}
+          NPM_PASSWORD: ${{ secrets.PASSWORD }}
+          NPM_EMAIL: ${{ secrets.EMAIL }}
+
+      - name: Publish a new release
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NEXTRA_LOG }}
