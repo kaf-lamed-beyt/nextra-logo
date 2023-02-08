@@ -1,12 +1,14 @@
 {
   "name": "nextra-logo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Render variations of your logos in dark and light mode for the Nextra docs library",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/esm/index.d.ts",
   "scripts": {
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir dist/cjs"
   },
   "repository": {
     "type": "git",
@@ -25,23 +27,10 @@
   },
   "homepage": "https://github.com/kaf-lamed-beyt/nextra-logo#readme",
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-react": "^7.18.6",
-    "@rollup/plugin-commonjs": "^24.0.1",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "^3.12.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-dts": "^5.1.1",
-    "rollup-plugin-generate-package-json": "^3.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
