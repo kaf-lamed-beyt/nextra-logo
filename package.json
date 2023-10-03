@@ -1,6 +1,6 @@
 {
   "name": "nextra-logo",
-  "version": "0.1.3",
+  "version": "0.1.3-beta.0",
   "description": "Render variations of your logos in dark and light mode for the Nextra docs library",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

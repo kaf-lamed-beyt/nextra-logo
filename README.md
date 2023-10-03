@@ -46,6 +46,23 @@ const config: DocsThemeConfig = {
 };
 ```
 
+## Optional props
+
+Say you have a logo that does not show your brand name, with `nextra-logo`, you can provide a value to the `logoText` prop and customize it however you wish with the `textSize` and `textWeight` props, for the size and weight of your brand text, respectively.
+
+```tsx
+import { Logo } from "nextra-logo";
+
+<Logo
+  logoText="name"
+  dark="/logo/gs-dark.svg"
+  light="/logo/gs-light.svg"
+  size="50"
+  textWeight="700"
+  textSize="20"
+/>;
+```
+
 The snippet above assumes that you've placed your logos in a sub-directory &mdash; `logo` &mdash; in the public folder.
 
 You can learn more about Nextra, [here](https://nextra.site/docs/docs-theme/start)

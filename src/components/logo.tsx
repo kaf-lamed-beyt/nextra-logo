@@ -21,7 +21,7 @@ const Logo = ({
   const { theme, systemTheme } = useTheme();
 
   return (
-    <div style={{ display: "flex", gap: ".6em" }}>
+    <div style={{ display: "flex", gap: ".3em" }}>
       <img
         src={theme || systemTheme === "dark" ? light : dark}
         width={size}
