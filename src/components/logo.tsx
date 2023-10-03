@@ -25,21 +25,25 @@ const Logo = ({
   // }
 
   return (
-    <div
-      style={{ display: logoText ? "" : "flex", gap: logoText ? "" : ".6em" }}
-    >
+    <div style={{ display: "flex", gap: ".6em" }}>
       <img
         src={theme === "dark" ? light : dark}
         width={size}
         height={size}
         alt={theme === dark ? "dark theme logo" : "light theme logo"}
-      />{" "}
+      />
       {logoText ? (
-        <span
-          style={{ margin: "auto", fontSize: textSize, fontWeight: textWeight }}
-        >
-          {logoText}
-        </span>
+        <div className="brand-name">
+          <p
+            style={{
+              margin: "auto",
+              fontSize: textSize,
+              fontWeight: textWeight,
+            }}
+          >
+            {logoText}
+          </p>
+        </div>
       ) : null}
     </div>
   );
