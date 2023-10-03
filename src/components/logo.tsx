@@ -6,7 +6,7 @@ interface logoProps {
   light: string;
 }
 
-const Logo: React = ({ dark, light }: logoProps) => {
+const Logo = ({ dark, light }: logoProps) => {
   const { theme } = useTheme();
 
   if (theme === "dark") {
