@@ -6,10 +6,8 @@ interface logoProps {
   light: string;
 }
 
-const Logo: React.FC<logoProps> = ({ dark, light }) => {
-  const { theme, systemTheme } = useTheme();
-
-  console.log("current theme", theme, systemTheme);
+const Logo: React = ({ dark, light }: logoProps) => {
+  const { theme } = useTheme();
 
   if (theme === "dark") {
     return <img src={light} width="120" height="120" alt="dark theme logo" />;
