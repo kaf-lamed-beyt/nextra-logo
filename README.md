@@ -32,7 +32,7 @@ const config: DocsThemeConfig = {
 export default config;
 ```
 
-The component receives two props: `light` and `dark`. These props accept the path to where your logos are kept.
+The component receives these three props: `light`, `dark` that accept the patsh to where your logos are kept, and the `size` that determines how big you want your logo to be.
 
 Ideally, you would place your images in the `public/` folder when you're using Next.js, and since Nextra is mostly Next.js, I'd recommend you place your images that folder.
 
@@ -40,7 +40,9 @@ Then you can go ahead to use the component like so: 🔽
 
 ```tsx
 const config: DocsThemeConfig = {
-  logo: <Logo dark="/logo/dark-logo.png" light="/logo/light-logo.png" />,
+  logo: (
+    <Logo dark="/logo/dark-logo.png" light="/logo/light-logo.png" size="40" />
+  ),
 };
 ```
 

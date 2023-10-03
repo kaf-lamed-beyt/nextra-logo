@@ -18,19 +18,17 @@ const Logo = ({
   textSize,
   textWeight,
 }: logoProps) => {
-  const { theme } = useTheme();
-
-  // if (theme === "dark") {
-  //   return <img src={light} width={size} height={size} alt="dark theme logo" />;
-  // }
+  const { theme, systemTheme } = useTheme();
 
   return (
     <div style={{ display: "flex", gap: ".6em" }}>
       <img
-        src={theme === "dark" ? light : dark}
+        src={theme || systemTheme === "dark" ? light : dark}
         width={size}
         height={size}
-        alt={theme === dark ? "dark theme logo" : "light theme logo"}
+        alt={
+          theme || systemTheme === dark ? "dark theme logo" : "light theme logo"
+        }
       />
       {logoText ? (
         <div className="brand-name">
